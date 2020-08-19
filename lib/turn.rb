@@ -37,12 +37,11 @@ def turn(board)
     input = gets.strip
     index = input_to_index(input)
     valid_input = valid_move?(board, index)
-    if valid_input == false
-        puts 'valid input'
-        input = gets.strip
-        index = input_to_index(input)
-        valid_input = valid_move?(board, index)
+    if valid_input == true
+        move(board, index)
+        display_board(board)
+    else
+        turn(board)
     end
-    move(board, index)
-    display_board(board)
+    
 end
